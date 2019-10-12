@@ -17,8 +17,8 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class CommonResponseData(
-    @SerializedName("status") @Expose val status: String,
-    @SerializedName("message") @Expose val message: String
+  @SerializedName("status") @Expose val status: String,
+  @SerializedName("message") @Expose val message: String
 )
 
 /*

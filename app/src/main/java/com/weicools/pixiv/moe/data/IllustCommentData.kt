@@ -11,21 +11,21 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class IllustCommentData(
-    @SerializedName("total_comments") @Expose val totalComments: Int,
-    @SerializedName("comments") @Expose val comments: List<Comment>
+  @SerializedName("total_comments") @Expose val totalComments: Int,
+  @SerializedName("comments") @Expose val comments: List<Comment>
 )
 
 data class Comment(
-    @SerializedName("id") @Expose val id: Int,
-    @SerializedName("comment") @Expose val comment: String,
-    @SerializedName("date") @Expose val date: String,
-    @SerializedName("user") @Expose val user: CommentUser,
-    @SerializedName("parent_comment") @Expose val parentComment: List<Any>
+  @SerializedName("id") @Expose val id: Int,
+  @SerializedName("comment") @Expose val comment: String,
+  @SerializedName("date") @Expose val date: String,
+  @SerializedName("user") @Expose val user: CommentUser,
+  @SerializedName("parent_comment") @Expose val parentComment: List<Any>
 )
 
 data class CommentUser(
-    @SerializedName("id") @Expose val id: Int,
-    @SerializedName("name") @Expose val name: String,
-    @SerializedName("account") @Expose val account: String,
-    @SerializedName("profile_image_urls") @Expose val profileImageUrls: ProfileImageUrls
+  @SerializedName("id") @Expose val id: Int,
+  @SerializedName("name") @Expose val name: String,
+  @SerializedName("account") @Expose val account: String,
+  @SerializedName("profile_image_urls") @Expose val profileImageUrls: ProfileImageUrls
 )

@@ -9,9 +9,9 @@ import com.google.gson.annotations.SerializedName
  * desc:
  */
 data class ImageUrls(
-    @SerializedName("px_128x128") @Expose val px128x128: String,
-    @SerializedName("px_480mw") @Expose val px480mw: String,
-    @SerializedName("large") @Expose val large: String,
-    @SerializedName("small") @Expose val small: String,
-    @SerializedName("medium") @Expose val medium: String
+  @SerializedName("px_128x128") @Expose val px128x128: String,
+  @SerializedName("px_480mw") @Expose val px480mw: String,
+  @SerializedName("large") @Expose val large: String,
+  @SerializedName("small") @Expose val small: String,
+  @SerializedName("medium") @Expose val medium: String
 )

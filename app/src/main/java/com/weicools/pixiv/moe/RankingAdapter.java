@@ -1,16 +1,14 @@
 package com.weicools.pixiv.moe;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.weicools.pixiv.moe.data.Work;
@@ -28,25 +26,25 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingH
   private Context mContext;
   private List<Works> mWorkList;
 
-  RankingAdapter (Context context) {
+  RankingAdapter(Context context) {
     mContext = context;
     mWorkList = new ArrayList<>();
   }
 
-  public void updateWorkList (List<Works> workList) {
+  public void updateWorkList(List<Works> workList) {
     mWorkList = workList;
     notifyDataSetChanged();
   }
 
   @NonNull
   @Override
-  public RankingHolder onCreateViewHolder (@NonNull ViewGroup parent, int viewType) {
+  public RankingHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(mContext).inflate(R.layout.item_ranking, parent, false);
     return new RankingHolder(view);
   }
 
   @Override
-  public void onBindViewHolder (@NonNull RankingHolder holder, int position) {
+  public void onBindViewHolder(@NonNull RankingHolder holder, int position) {
     final Work work = mWorkList.get(position).getWork();
 
     holder.mTvAuthorName.setText(work.getUser().getName());
@@ -62,17 +60,18 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingH
   }
 
   @Override
-  public int getItemCount () {
+  public int getItemCount() {
     return mWorkList == null ? 0 : mWorkList.size();
   }
 
   static class RankingHolder extends RecyclerView.ViewHolder {
-    @BindView(R.id.iv_pixiv) ImageView mIvPixiv;
-    @BindView(R.id.tv_author_name) TextView mTvAuthorName;
+    ImageView mIvPixiv;
+    TextView mTvAuthorName;
 
-    RankingHolder (View itemView) {
+    RankingHolder(View itemView) {
       super(itemView);
-      ButterKnife.bind(this, itemView);
+      mIvPixiv = itemView.findViewById(R.id.iv_pixiv);
+      mTvAuthorName = itemView.findViewById(R.id.tv_author_name);
     }
   }
 }

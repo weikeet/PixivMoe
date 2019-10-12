@@ -11,16 +11,16 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class SearchData(
-    @SerializedName("status") @Expose val status: String,
-    @SerializedName("response") @Expose val response: List<SearchResponse>,
-    @SerializedName("count") @Expose val count: Int,
-    @SerializedName("pagination") @Expose val pagination: Pagination
+  @SerializedName("status") @Expose val status: String,
+  @SerializedName("response") @Expose val response: List<SearchResponse>,
+  @SerializedName("count") @Expose val count: Int,
+  @SerializedName("pagination") @Expose val pagination: Pagination
 )
 
 data class SearchResponse(
-    @SerializedName("id") @Expose val id: Int,
-    @SerializedName("title") @Expose val title: String,
-    @SerializedName("image_urls") @Expose val imageUrls: ImageUrls,
-    @SerializedName("stats") @Expose val stats: Stats,
-    @SerializedName("unique_id") @Expose val uniqueId: String
+  @SerializedName("id") @Expose val id: Int,
+  @SerializedName("title") @Expose val title: String,
+  @SerializedName("image_urls") @Expose val imageUrls: ImageUrls,
+  @SerializedName("stats") @Expose val stats: Stats,
+  @SerializedName("unique_id") @Expose val uniqueId: String
 )

@@ -8,7 +8,7 @@ import android.app.Application;
  * desc:
  */
 public class PixivApplication extends Application {
-  @Override public void onCreate () {
+  @Override public void onCreate() {
     super.onCreate();
   }
 }

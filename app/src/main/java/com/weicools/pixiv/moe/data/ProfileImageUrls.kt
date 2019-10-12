@@ -9,6 +9,6 @@ import com.google.gson.annotations.SerializedName
  * desc:
  */
 data class ProfileImageUrls(
-    @SerializedName("px_50x50") @Expose val px50x50: String,
-    @SerializedName("medium") @Expose val medium: String
+  @SerializedName("px_50x50") @Expose val px50x50: String,
+  @SerializedName("medium") @Expose val medium: String
 )

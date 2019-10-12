@@ -9,14 +9,14 @@ import com.google.gson.annotations.SerializedName
  * desc:
  */
 data class Stats(
-    @SerializedName("scored_count") @Expose val scored_count: Int,
-    @SerializedName("score") @Expose val score: Int,
-    @SerializedName("views_count") @Expose val viewsCount: Int,
-    @SerializedName("favorited_count") @Expose val favoriteCount: FavoriteCount,
-    @SerializedName("commented_count") @Expose val commentedCount: Int
+  @SerializedName("scored_count") @Expose val scored_count: Int,
+  @SerializedName("score") @Expose val score: Int,
+  @SerializedName("views_count") @Expose val viewsCount: Int,
+  @SerializedName("favorited_count") @Expose val favoriteCount: FavoriteCount,
+  @SerializedName("commented_count") @Expose val commentedCount: Int
 )
 
 data class FavoriteCount(
-    @SerializedName("public") @Expose val public: Int,
-    @SerializedName("private") @Expose val private: Int
+  @SerializedName("public") @Expose val public: Int,
+  @SerializedName("private") @Expose val private: Int
 )

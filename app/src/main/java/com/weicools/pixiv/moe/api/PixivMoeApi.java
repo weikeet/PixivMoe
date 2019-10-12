@@ -7,7 +7,6 @@ import com.weicools.pixiv.moe.data.IllustDetailData;
 import com.weicools.pixiv.moe.data.IllustListData;
 import com.weicools.pixiv.moe.data.RankingData;
 import com.weicools.pixiv.moe.data.SearchData;
-import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -32,7 +31,7 @@ public interface PixivMoeApi {
    * @return ranking list
    */
   @GET("ranking")
-  Observable<RankingData> getRankingList (@Query("page") int page);
+  Observable<RankingData> getRankingList(@Query("page") int page);
 
   /**
    * Search
@@ -44,7 +43,7 @@ public interface PixivMoeApi {
    * @return search result
    */
   @GET("ranking")
-  Observable<SearchData> getSearchData (@Query("word") String word, @Query("page") int page);
+  Observable<SearchData> getSearchData(@Query("word") String word, @Query("page") int page);
 
   /**
    * Illust List
@@ -56,7 +55,7 @@ public interface PixivMoeApi {
    * @return Illust List data
    */
   @GET("gallery")
-  Observable<IllustListData> getIllustList (@Query("tag") String tag, @Query("page") int page);
+  Observable<IllustListData> getIllustList(@Query("tag") String tag, @Query("page") int page);
 
   /**
    * Illust Detail
@@ -67,7 +66,7 @@ public interface PixivMoeApi {
    * @return Illust Detail data
    */
   @GET("illust/{illust_id}")
-  Observable<IllustDetailData> getIllustDetail (@Path("illust_id") int illustId);
+  Observable<IllustDetailData> getIllustDetail(@Path("illust_id") int illustId);
 
   /**
    * Illust Comments
@@ -79,7 +78,7 @@ public interface PixivMoeApi {
    * @return Illust Comments data
    */
   @GET("illust/comments/{illust_id}")
-  Observable<IllustCommentData> getIllustComments (@Path("illust_id") int illustId, @Query("page") int page);
+  Observable<IllustCommentData> getIllustComments(@Path("illust_id") int illustId, @Query("page") int page);
 
   /**
    * add Favourite
@@ -96,7 +95,7 @@ public interface PixivMoeApi {
    * @return favourite response result
    */
   @PUT("/favourite/{illust_id}")
-  Observable<CommonResponseData> addFavourite (@Path("illust_id") int illustId);
+  Observable<CommonResponseData> addFavourite(@Path("illust_id") int illustId);
 
   /**
    * Auth
@@ -113,5 +112,5 @@ public interface PixivMoeApi {
    * @return AuthData
    */
   @POST("user/auth")
-  Observable<AuthData> auth ();
+  Observable<AuthData> auth();
 }

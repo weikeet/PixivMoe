@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PixivMoeClient {
   private PixivMoeApi mMoeApi;
 
-  private PixivMoeClient () {
+  private PixivMoeClient() {
     OkHttpClient httpClient = new OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).build();
 
     Retrofit retrofit = new Retrofit.Builder().baseUrl(PixivMoeApi.BASE_URL)
@@ -30,11 +30,11 @@ public class PixivMoeClient {
     static final PixivMoeClient INSTANCE = new PixivMoeClient();
   }
 
-  public static PixivMoeClient getInstance () {
+  public static PixivMoeClient getInstance() {
     return PixivMoeHolder.INSTANCE;
   }
 
-  public PixivMoeApi getMoeApi () {
+  public PixivMoeApi getMoeApi() {
     return mMoeApi;
   }
 }

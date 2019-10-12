@@ -2,13 +2,11 @@ package com.weicools.pixiv.moe;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.widget.Toast;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.weicools.pixiv.moe.api.PixivMoeClient;
 import com.weicools.pixiv.moe.data.Works;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
   private static final String TAG = "MainActivity";
 
-  @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+  private RecyclerView mRecyclerView;
   private RankingAdapter mAdapter;
   private CompositeDisposable mDisposable;
 
@@ -32,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate (Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    ButterKnife.bind(this);
+
+    mRecyclerView = findViewById(R.id.recycler_view);
 
     mDisposable = new CompositeDisposable();
     mAdapter = new RankingAdapter(this);

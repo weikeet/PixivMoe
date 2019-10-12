@@ -11,17 +11,17 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class IllustListData(
-    @SerializedName("status") @Expose val status: String,
-    @SerializedName("response") @Expose val response: List<IllustListResponse>,
-    @SerializedName("count") @Expose val count: Int,
-    @SerializedName("pagination") @Expose val pagination: Pagination,
-    @SerializedName("expires_at") @Expose val expiresAt: Int
+  @SerializedName("status") @Expose val status: String,
+  @SerializedName("response") @Expose val response: List<IllustListResponse>,
+  @SerializedName("count") @Expose val count: Int,
+  @SerializedName("pagination") @Expose val pagination: Pagination,
+  @SerializedName("expires_at") @Expose val expiresAt: Int
 )
 
 data class IllustListResponse(
-    @SerializedName("id") @Expose val id: Int,
-    @SerializedName("title") @Expose val title: String,
-    @SerializedName("image_urls") @Expose val imageUrls: ImageUrls,
-    @SerializedName("stats") @Expose val stats: Stats,
-    @SerializedName("unique_id") @Expose val uniqueId: String
+  @SerializedName("id") @Expose val id: Int,
+  @SerializedName("title") @Expose val title: String,
+  @SerializedName("image_urls") @Expose val imageUrls: ImageUrls,
+  @SerializedName("stats") @Expose val stats: Stats,
+  @SerializedName("unique_id") @Expose val uniqueId: String
 )
