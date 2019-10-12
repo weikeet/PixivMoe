@@ -1,4 +1,4 @@
-package com.weicools.pixiv.moe;
+package me.weicools.pixivmoe;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -7,8 +7,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import com.weicools.pixiv.moe.api.PixivMoeClient;
-import com.weicools.pixiv.moe.data.Works;
+import com.weicools.pixiv.moe.R;
+import me.weicools.pixivmoe.api.PixivMoeClient;
+import me.weicools.pixivmoe.data.Works;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;

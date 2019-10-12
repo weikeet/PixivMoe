@@ -1,12 +1,12 @@
-package com.weicools.pixiv.moe.api;
+package me.weicools.pixivmoe.api;
 
-import com.weicools.pixiv.moe.data.AuthData;
-import com.weicools.pixiv.moe.data.CommonResponseData;
-import com.weicools.pixiv.moe.data.IllustCommentData;
-import com.weicools.pixiv.moe.data.IllustDetailData;
-import com.weicools.pixiv.moe.data.IllustListData;
-import com.weicools.pixiv.moe.data.RankingData;
-import com.weicools.pixiv.moe.data.SearchData;
+import me.weicools.pixivmoe.data.AuthData;
+import me.weicools.pixivmoe.data.CommonResponseData;
+import me.weicools.pixivmoe.data.IllustCommentData;
+import me.weicools.pixivmoe.data.IllustDetailData;
+import me.weicools.pixivmoe.data.IllustListData;
+import me.weicools.pixivmoe.data.RankingData;
+import me.weicools.pixivmoe.data.SearchData;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.POST;

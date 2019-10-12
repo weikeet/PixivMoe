@@ -1,4 +1,4 @@
-package com.weicools.pixiv.moe.api;
+package me.weicools.pixivmoe.api;
 
 import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;

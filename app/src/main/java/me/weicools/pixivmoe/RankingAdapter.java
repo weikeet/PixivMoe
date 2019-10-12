@@ -1,4 +1,4 @@
-package com.weicools.pixiv.moe;
+package me.weicools.pixivmoe;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,8 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.weicools.pixiv.moe.data.Work;
-import com.weicools.pixiv.moe.data.Works;
+import com.weicools.pixiv.moe.R;
+import me.weicools.pixivmoe.data.Work;
+import me.weicools.pixivmoe.data.Works;
 import java.util.ArrayList;
 import java.util.List;
 

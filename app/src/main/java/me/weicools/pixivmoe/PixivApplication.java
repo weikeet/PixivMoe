@@ -1,4 +1,4 @@
-package com.weicools.pixiv.moe;
+package me.weicools.pixivmoe;
 
 import android.app.Application;
 

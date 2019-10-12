@@ -1,4 +1,4 @@
-package com.weicools.pixiv.moe;
+package me.weicools.pixivmoe;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.github.chrisbanes.photoview.PhotoView;
+import com.weicools.pixiv.moe.R;
 
 /**
  * @author Weicools
