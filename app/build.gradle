@@ -41,41 +41,33 @@ android {
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  // kotlin plugin
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-  // Support Library
-  implementation 'com.google.android.material:material:1.0.0'
-  implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-  implementation 'androidx.browser:browser:1.0.0'
-  implementation 'androidx.cardview:cardview:1.0.0'
-  implementation 'androidx.appcompat:appcompat:1.1.0'
-  implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+  implementation(DepLibs.KotlinLib)
+  implementation(DepLibs.Gson)
 
-  // Rx series
-  implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
-  implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-  implementation "zlc.season:rxdownload3:$rxdownload_version"
+  implementation(AndroidLibs.XAppCompat)
+  implementation(AndroidLibs.XSupportV4)
+  implementation(AndroidLibs.XMaterialDesign)
+  implementation(AndroidLibs.XCardView)
+  implementation(AndroidLibs.XCustomTabs)
+  implementation(AndroidLibs.XConstraintLayout)
 
-  // Retrofit series
-  implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-  implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-  implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+  implementation(RxLibs.RxJava2)
+  implementation(RxLibs.RxAndroid2)
+  implementation(RxLibs.RxDownload)
 
-  // json
-  implementation "com.google.code.gson:gson:$gson_version"
+  implementation(NetworkLibs.Retrofit)
+  implementation(NetworkLibs.RetrofitConverterGson)
+  implementation(NetworkLibs.RetrofitAdapterRxJava2)
 
-  // Image load
-  implementation "com.github.chrisbanes:PhotoView:$photo_version"
-  implementation "com.github.bumptech.glide:glide:$glide_version"
-  kapt "com.github.bumptech.glide:compiler:$glide_version"
+  implementation(ImageLoaderLibs.Glide)
+  kapt(ImageLoaderLibs.GlideCompiler)
 
-  // ui library
-  implementation "com.nex3z:flow-layout:$flow_layout"
-  implementation "com.aurelhubert:ahbottomnavigation:$ahbottom_version"
-  implementation "com.github.daniel-stoneuk:material-about-library:$about_version"
+  implementation(WidgetLibs.PhotoView)
+  implementation(WidgetLibs.FlowLayout)
+  implementation(WidgetLibs.AHBottomNavigation)
+  implementation(WidgetLibs.MaterialAboutLibrary)
 
-  // leakCanary
-  debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_version"
-  releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_version"
+  debugImplementation(AnalyticLibs.LeakCanaryDebug)
+  releaseImplementation(AnalyticLibs.LeakCanaryRelease)
 }
