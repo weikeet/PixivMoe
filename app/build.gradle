@@ -44,6 +44,9 @@ dependencies {
 
   implementation(DepLibs.KotlinLib)
   implementation(DepLibs.Gson)
+  implementation(DepLibs.Dagger2)
+  implementation(DepLibs.Dagger2Compiler)
+  implementation(DepLibs.EventBus)
 
   implementation(AndroidLibs.XAppCompat)
   implementation(AndroidLibs.XSupportV4)
@@ -55,6 +58,11 @@ dependencies {
   implementation(RxLibs.RxJava2)
   implementation(RxLibs.RxAndroid2)
   implementation(RxLibs.RxDownload)
+  implementation(RxLibs.RxLifecycle)
+  implementation(RxLibs.RxLifecycleAndroid)
+  implementation(RxLibs.RxCache2)
+  implementation(RxLibs.RxCache2Json)
+  implementation(RxLibs.RxPermissions2)
 
   implementation(NetworkLibs.Retrofit)
   implementation(NetworkLibs.RetrofitConverterGson)
@@ -68,6 +76,7 @@ dependencies {
   implementation(WidgetLibs.AHBottomNavigation)
   implementation(WidgetLibs.MaterialAboutLibrary)
 
+  implementation(AnalyticLibs.Timber)
   debugImplementation(AnalyticLibs.LeakCanaryDebug)
   releaseImplementation(AnalyticLibs.LeakCanaryRelease)
 }

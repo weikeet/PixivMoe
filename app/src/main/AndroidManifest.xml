@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
+        <activity android:name="me.weicools.pixivmoe.module.login.LoginActivity"></activity>
         <activity android:name="me.weicools.pixivmoe.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="me.weicools.pixivmoe.PixivDetailActivity"
             android:label="@string/title_activity_pixiv_detail"
             android:theme="@style/AppNoActionBarTheme" />
     </application>
+
 </manifest>
