@@ -33,7 +33,7 @@ open class BasePresenter<M : IModel, V : IView> : IPresenter, LifecycleObserver 
 
   constructor() : this(null, null)
 
-  final override fun onAttach() {
+  open override fun onAttach() {
     if (view is LifecycleOwner) {
       (view as LifecycleOwner).lifecycle.addObserver(this)
 

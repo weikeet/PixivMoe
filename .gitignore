@@ -33,3 +33,4 @@ build/
 .externalNativeBuild
 /.project
 /.settings/
+output.json

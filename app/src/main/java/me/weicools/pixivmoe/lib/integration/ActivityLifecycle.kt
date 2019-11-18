@@ -14,34 +14,34 @@ import javax.inject.Singleton
 
 @Singleton
 class ActivityLifecycle @Inject constructor():Application.ActivityLifecycleCallbacks {
-  @Inject
-  lateinit var app
+  // @Inject
+  // lateinit var app
 
   override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivityStarted(activity: Activity) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivityResumed(activity: Activity) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivityPaused(activity: Activity) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivityStopped(activity: Activity) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivityDestroyed(activity: Activity) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 }
