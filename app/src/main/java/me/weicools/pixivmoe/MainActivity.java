@@ -14,6 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
+import timber.log.Timber;
 
 /**
  * @author weicools
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }, throwable -> {
           mProgressDialog.dismiss();
           Toast.makeText(MainActivity.this, "Moe moe moe...", Toast.LENGTH_SHORT).show();
-          Log.e(TAG, "accept: " + throwable.getMessage());
+          Timber.e("accept: %s", throwable.getMessage());
         }));
   }
 
