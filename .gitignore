@@ -34,3 +34,5 @@ build/
 /.project
 /.settings/
 output.json
+
+buildSrc
