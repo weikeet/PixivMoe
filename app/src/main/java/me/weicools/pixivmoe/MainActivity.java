@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.weicools.pixiv.moe.R;
 import me.weicools.pixivmoe.api.PixivMoeClient;
 import me.weicools.pixivmoe.data.Works;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 import timber.log.Timber;
 
@@ -24,45 +21,45 @@ public class MainActivity extends AppCompatActivity {
 
   private RecyclerView mRecyclerView;
   private RankingAdapter mAdapter;
-  private CompositeDisposable mDisposable;
+  // private CompositeDisposable mDisposable;
 
   private ProgressDialog mProgressDialog;
 
   @Override
-  protected void onCreate (Bundle savedInstanceState) {
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
     mRecyclerView = findViewById(R.id.recycler_view);
 
-    mDisposable = new CompositeDisposable();
-    mAdapter = new RankingAdapter(this);
-    RecyclerView.LayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-    mRecyclerView.setLayoutManager(manager);
-    mRecyclerView.setAdapter(mAdapter);
-
-    mProgressDialog = new ProgressDialog(this);
-    mProgressDialog.setMessage(getString(R.string.dialog_progress_title));
-    mProgressDialog.show();
-    mDisposable.add(PixivMoeClient.getInstance()
-        .getMoeApi()
-        .getRankingList(1)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(rankingData -> {
-          mProgressDialog.dismiss();
-          List<Works> dataList = rankingData.getResponse().getWorks();
-          mAdapter.updateWorkList(dataList);
-        }, throwable -> {
-          mProgressDialog.dismiss();
-          Toast.makeText(MainActivity.this, "Moe moe moe...", Toast.LENGTH_SHORT).show();
-          Timber.e("accept: %s", throwable.getMessage());
-        }));
+    // mDisposable = new CompositeDisposable();
+    // mAdapter = new RankingAdapter(this);
+    // RecyclerView.LayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+    // mRecyclerView.setLayoutManager(manager);
+    // mRecyclerView.setAdapter(mAdapter);
+    //
+    // mProgressDialog = new ProgressDialog(this);
+    // mProgressDialog.setMessage(getString(R.string.dialog_progress_title));
+    // mProgressDialog.show();
+    // mDisposable.add(PixivMoeClient.get()
+    //     .getMoeApi()
+    //     .getRankingList(1)
+    //     .subscribeOn(Schedulers.io())
+    //     .observeOn(AndroidSchedulers.mainThread())
+    //     .subscribe(rankingData -> {
+    //       mProgressDialog.dismiss();
+    //       List<Works> dataList = rankingData.getResponse().getWorks();
+    //       mAdapter.updateWorkList(dataList);
+    //     }, throwable -> {
+    //       mProgressDialog.dismiss();
+    //       Toast.makeText(MainActivity.this, "Moe moe moe...", Toast.LENGTH_SHORT).show();
+    //       Timber.e("accept: %s", throwable.getMessage());
+    //     }));
   }
 
   @Override
-  protected void onDestroy () {
-    mDisposable.dispose();
+  protected void onDestroy() {
+    // mDisposable.dispose();
     super.onDestroy();
   }
 }

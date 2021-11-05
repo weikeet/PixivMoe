@@ -1,17 +1,20 @@
 package me.weicools.pixivmoe
 
 import android.app.Application
-import cn.cxzheng.tracemanui.MethodTraceServerManager
+import timber.log.Timber
 
 /**
  * @author weicools Create on 2018.07.11
- *
- * desc:
  */
-@Suppress("unused")
 class PixivApplication : Application() {
+  companion object {
+    const val TAG = "PixivApplication"
+  }
+
   override fun onCreate() {
     super.onCreate()
-    MethodTraceServerManager.startService(this)
+
+    // Timber.
+    Timber.tag(TAG).d("onCreate: ")
   }
 }

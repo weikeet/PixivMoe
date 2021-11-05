@@ -3,7 +3,7 @@ package me.weicools.pixivmoe.api;
 import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -11,8 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * desc:
  */
-public class PixivMoeClient {
-  private PixivMoeApi mMoeApi;
+public final class PixivMoeClient {
+  private final PixivMoeApi mMoeApi;
 
   private PixivMoeClient() {
     OkHttpClient httpClient = new OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).build();
@@ -20,7 +20,7 @@ public class PixivMoeClient {
     Retrofit retrofit = new Retrofit.Builder().baseUrl(PixivMoeApi.BASE_URL)
         .client(httpClient)
         .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .build();
 
     mMoeApi = retrofit.create(PixivMoeApi.class);
@@ -30,7 +30,7 @@ public class PixivMoeClient {
     static final PixivMoeClient INSTANCE = new PixivMoeClient();
   }
 
-  public static PixivMoeClient getInstance() {
+  public static PixivMoeClient get() {
     return PixivMoeHolder.INSTANCE;
   }
 

@@ -1,29 +1,33 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
+  ext {
+    kotlin_version = '1.5.30'
+    dokka_version = '0.9.17'
+    buildConfig = ['versionCode'      : 1,
+                   'versionName'      : "1.0.0",
+                   'compileSdkVersion': 30,
+                   'minSdkVersion'    : 16,
+                   'targetSdkVersion' : 30]
+  }
+
   repositories {
     google()
-    jcenter()
-
-    maven { url 'https://jitpack.io' }
-    maven { url "https://plugins.gradle.org/m2/" }
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/public' }
   }
 
   dependencies {
-    classpath DepLibs.AndroidPlugin
-    classpath DepLibs.KotlinPlugin
-    classpath DepLibs.AndResGuardPlugin
-
-    classpath AnalyticLibs.MethodTraceManPlugin
+    classpath "com.android.tools.build:gradle:4.2.2"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "com.tencent.mm:AndResGuard-gradle-plugin:1.2.21"
   }
 }
 
 allprojects {
   repositories {
     google()
-    jcenter()
+    mavenCentral()
     maven { url 'https://jitpack.io' }
-    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url 'https://maven.aliyun.com/repository/public' }
   }
 }
 

@@ -1,11 +1,10 @@
 package me.weicools.pixivmoe.module.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.weicools.pixiv.moe.R
-import me.weicools.pixivmoe.lib.mvp.IView
 
-class LoginActivity : AppCompatActivity(),IView {
+class LoginActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
