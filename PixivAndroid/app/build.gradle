@@ -1,0 +1,83 @@
+plugins {
+  id 'com.android.application'
+  id 'org.jetbrains.kotlin.android'
+  id 'org.jetbrains.kotlin.kapt'
+}
+
+android {
+  compileSdk 32
+
+  defaultConfig {
+    applicationId "com.weiwei.android.pixiv"
+    minSdk 21
+    targetSdk 32
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    debug {
+      minifyEnabled false
+    }
+    release {
+      minifyEnabled true
+      shrinkResources true
+      proguardFile 'proguard-rules.pro'
+      proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+    }
+  }
+
+  // kapt {
+  //   correctErrorTypes = true
+  // }
+  //
+  // lintOptions {
+  //   abortOnError false
+  // }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+
+  buildFeatures {
+    viewBinding true
+  }
+}
+
+dependencies {
+
+  implementation 'androidx.core:core-ktx:1.7.0'
+  implementation 'androidx.appcompat:appcompat:1.4.1'
+  implementation 'com.google.android.material:material:1.6.0'
+  implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+  implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+  implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+
+  implementation(DepLibs.Gson)
+
+  implementation HttpLibs.OkHttp3
+  implementation HttpLibs.Retrofit
+  implementation HttpLibs.RetrofitConverterGson
+  implementation HttpLibs.RetrofitAdapterRxJava3
+
+  implementation RxLibs.RxJava3
+  implementation RxLibs.RxAndroid3
+
+  implementation WidgetLibs.MultiType
+  implementation WidgetLibs.PhotoView
+  implementation WidgetLibs.FlowLayout
+
+  implementation AnalyticLibs.Timber
+
+  implementation ImageLoaderLibs.GlideTransformations
+  implementation ImageLoaderLibs.Glide
+  kapt ImageLoaderLibs.GlideCompiler
+
+  implementation "com.weicools:evil-icons:1.0.0"
+  implementation "com.weicools:eva-icons:1.0.0"
+}
